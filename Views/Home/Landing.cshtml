@@ -1,0 +1,80 @@
+@{
+    int UserId = (int)Context.Session.GetInt32("UserId");
+}
+
+<div class="row">
+    <div class="col-md-8 text-center" >
+        <h1>Welcome, @Context.Session.GetString("UserName")</h1>
+    </div>
+    <div class="col-md-4 text-right">
+        <a asp-action="Logout" asp-controller="Home">Logout</a> | 
+        <a asp-action="MyWishlist" asp-controller="Home" asp-route-UserId="@UserId">My Wishlist</a>
+    </div>
+</div>
+<h3>Pharaoh Era Desitinations</h3>
+
+
+
+
+@{
+    foreach (Destination destination in ViewBag.Pharaoh)
+    {
+        <div class="card" style="width: 36rem;">
+            <a href="/destination/@destination.DestinationId"><img src="@destination.ImgURL" alt="image of destination" class="card-img-top"></a>
+            <div class="card-body">
+                <a href="/destination/@destination.DestinationId"><p class="card-text">@destination.Name</p></a>
+            </div>
+
+        </div>
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+<h3>Coptic Destinations</h3>
+@foreach (var destination in ViewBag.Coptic)
+{
+    <div class="card" style="width: 36rem;">
+            <a href="/destination/@destination.DestinationId"><img src="@destination.ImgURL" alt="image of destination" class="card-img-top"></a>
+            <div class="card-body">
+                <a href="/destination/@destination.DestinationId"><p class="card-text">@destination.Name</p></a>
+            </div>
+
+        </div>
+}
+
+
+<h3>Islamic</h3>
+@foreach (var destination in ViewBag.Islamic)
+{
+    <div class="card" style="width: 36rem;">
+            <a href="/destination/@destination.DestinationId"><img src="@destination.ImgURL" alt="image of destination" class="card-img-top"></a>
+            <div class="card-body">
+                <a href="/destination/@destination.DestinationId"><p class="card-text">@destination.Name</p></a>
+            </div>
+
+        </div>
+}
+
+
+<h3>Recreation</h3>
+@foreach (var destination in ViewBag.Recreation)
+{
+    <div class="card" style="width: 36rem;">
+            <a href="/destination/@destination.DestinationId"><img src="@destination.ImgURL" alt="image of destination" class="card-img-top"></a>
+            <div class="card-body">
+                <a href="/destination/@destination.DestinationId"><p class="card-text">@destination.Name</p></a>
+            </div>
+
+        </div>
+}
