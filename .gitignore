@@ -1,9 +1,1 @@
-env/
-
-*.swp
-*.*~
-project.lock.json
-*.pyc
-nupkg/
 appsettings.json
-.vscode
